@@ -15,7 +15,8 @@ class Phrase {
     addPhraseToDisplay() {
         let addPhraseToDisplay = document.querySelector('#phrase ul');
         addPhraseToDisplay.innerHTML = "";
-        
+        for()
+
 
     };
 }
