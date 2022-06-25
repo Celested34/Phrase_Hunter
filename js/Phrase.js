@@ -13,11 +13,29 @@ class Phrase {
 
     //add the addPhraseToDisplay method
     addPhraseToDisplay() {
-        let addPhraseToDisplay = document.querySelector('#phrase ul');
-        addPhraseToDisplay.innerHTML = "";
-        for()
 
+        //use querySelector to grab the phrase section 
+        let addPhrase = document.querySelector('#phrase ul'); 
 
+        //create a new variable to store the phrase being split by letter  
+        let phraseSplit = this.phrase.split('');
+      
+        
+        //create a for each loop 
+        phraseSplit.forEach(letter => {
+            let li = document.createElement('li')
+            li.innerHTML = letter;
+            //set class name to 'hide letter' if its a letter
+            //if not set class name for space
+            if (letter !== ' '){
+                li.className = `<li class="hide letter ${li.innerHTML}">${li.innerHTML}</li>`
+
+            } else {
+                li.className = `<li class="space"> </li>`
+            }
+            addPhrase.appendChild(li);
+        });
+        
     };
 }
 

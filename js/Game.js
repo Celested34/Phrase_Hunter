@@ -22,14 +22,23 @@ class Game {
         this.activePhrase = null;
 
     }
-        //select and return a random phrase
+        //This method selects and return a random phrase
         getRandomPhrase() {
         let randomPhrase = Math.floor(Math.random() * this.phrases.length);
         return this.phrases[randomPhrase];    
         };
 
-        
 
+        //This method hides the start screen overlay
+        startGame(){
+            //hides the start screen
+            let hideScreen = document.getElementById("overlay");
+            hideScreen.style.display = 'none';
 
+            //calls the method
+            this.activePhrase = this.getRandomPhrase();
+            this.activePhrase.addPhraseToDisplay();
+
+        }
 
 }

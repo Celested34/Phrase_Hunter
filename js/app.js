@@ -28,5 +28,22 @@
 //     logPhrase(game.getRandomPhrase());
 
 //test code step 6
-const game = new Game();
-game.getRandomPhrase().addPhraseToDisplay();
+//  const game = new Game();
+//  game.getRandomPhrase().addPhraseToDisplay();
+
+//test step 7 
+// const game = new Game();
+// game.startGame();
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+
+//step 8 code - create an event listener
+let game = '';
+const btnReset = document.getElementById('btn_reset');
+
+    btnReset.addEventListener('click', (e) => {
+        game = new Game();
+        game.startGame();
+   
+    });
+
+
