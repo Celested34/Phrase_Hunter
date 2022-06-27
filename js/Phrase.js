@@ -28,15 +28,16 @@ class Phrase {
             //set class name to 'hide letter' if its a letter
             //if not set class name for space
             if (letter !== ' '){
+                
                 li.className = `<li class="hide letter ${li.innerHTML}">${li.innerHTML}</li>`
-
             } else {
-                li.className = `<li class="space">  </li>`
+                li.className = `<li class="space"> </li>`
             }
             addPhrase.appendChild(li);
-        });
-        
-    };
+            });
+            
+    }
+    
 }
 
 
