@@ -22,22 +22,46 @@ class Phrase {
       
         
         //create a for each loop 
-        phraseSplit.forEach(character => {
-            let li = document.createElement('li')
-            li.innerHTML = letter;
+        phraseSplit.forEach((character) => {
+            let li = document.createElement("li");
+            li.innerHTML = character;
             //set class name to 'hide letter' if its a letter
             //if not set class name for space
-            if (letter !== ' '){
-                
-                `hide letter ${letter}`
+            if (character !== " ") {
+              li.className = `hide letter ${character}`;
             } else {
-                `space ${letter}` 
+              li.className = `space ${character}`;
             }
             addPhrase.appendChild(li);
-            });
+          });
             
     }
     
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter){
+        return this.phrase.includes(letter)
+    };
+    console.log(checkLetter)
+
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        //Show matching letters on the board in browser, 
+        let  showLetter = document.querySelectorAll('.letter');
+
+        for (let i = 0; i < showLetter.length; i++){
+            if(letter === showLetter[i].textContent){
+                showLetter[i].classList.remove('hide');
+                showLetter[i].classList.add('show');
+            }
+        }
+        
+    };
 }
 
 

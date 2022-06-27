@@ -41,4 +41,36 @@ class Game {
 
         }
 
+        /**
+        * Checks for winning move
+        * @return {boolean} True if game has been won, false if game wasn't
+        won
+        */
+       //checks if user won, before running out of hearts
+        // checkForWin() {
+        //     let hideLetters = document.querySelectorAll('.hide');
+        //     if (hideLetters.length === 0){
+        //         return true;
+        //     } else {
+        //         return false
+        //     }
+        // };
+
+        /**
+        * Increases the value of the missed property
+        * Removes a life from the scoreboard
+        * Checks if player has remaining lives and ends game if player is out
+        */
+       //removes hearts when the guess is not a letter from the phrase
+        removeLife(letter) {
+            if(){}
+        };
+
+
+        // handleInteraction(button){
+        //     button.disabled = true;
+        //     let buttonHtml = button.innerHtml;
+        
+        // };
+
 }
