@@ -31,7 +31,7 @@ class Phrase {
                 li.className = `<li class="hide letter ${li.innerHTML}">${li.innerHTML}</li>`
 
             } else {
-                li.className = `<li class="space"> </li>`
+                li.className = `<li class="space">  </li>`
             }
             addPhrase.appendChild(li);
         });

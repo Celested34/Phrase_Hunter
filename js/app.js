@@ -38,7 +38,7 @@
 
 //step 8 code - create an event listener
 let game = '';
-const btnReset = document.getElementById('btn_reset');
+const btnReset = document.getElementById('btn__reset');
 
     btnReset.addEventListener('click', (e) => {
         game = new Game();
