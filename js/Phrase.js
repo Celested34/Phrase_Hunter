@@ -22,16 +22,16 @@ class Phrase {
       
         
         //create a for each loop 
-        phraseSplit.forEach(letter => {
+        phraseSplit.forEach(character => {
             let li = document.createElement('li')
             li.innerHTML = letter;
             //set class name to 'hide letter' if its a letter
             //if not set class name for space
             if (letter !== ' '){
                 
-                li.className = `<li class="hide letter ${li.innerHTML}">${li.innerHTML}</li>`
+                `hide letter ${letter}`
             } else {
-                li.className = `<li class="space"> </li>`
+                `space ${letter}` 
             }
             addPhrase.appendChild(li);
             });
