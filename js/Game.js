@@ -47,7 +47,7 @@ class Game {
         checkForWin() {
             //get all the letter elements from the active phrase
             let hideLetters = document.querySelectorAll('.hide');
-            //if there are no letter elements left in the active phrase
+            
             if (hideLetters.length === 0) {
                 return true;
             } else {
@@ -61,14 +61,14 @@ class Game {
         removeLife() {
             //get the image elements from the scoreboard
             let lives = document.querySelectorAll('img');
-            //if the player has more than 0 lives
+            //After the 5th missed life it goes to game over
             if (this.missed < 4) {
-                //remove a life from the scoreboard
+                
                 lives[this.missed].src = 'images/lostHeart.png';
-                //increment the missed property
+                
                 this.missed++;
             } else {
-                //end the game
+                
                 this.gameOver(false);
             }
 
@@ -99,7 +99,7 @@ class Game {
         handleInteraction(button) {
             // console.log(button);
             
-            //disable the button
+           
             button.disabled = true;
 
             //check if the button text matches the active phrase letter
@@ -107,7 +107,7 @@ class Game {
                
                 //call the method to show matched letter
                 this.activePhrase.showMatchedLetter(button.innerHTML);
-                //add the class 'chosen' 
+                
                 button.classList.add('chosen');
 
                 //call the checkForWin method
@@ -115,7 +115,7 @@ class Game {
                         this.gameOver(true);
                     };
             } else {            
-                //add the class 'wrong' 
+                
                 button.classList.add('wrong');
                 //call removeLife 
                 this.removeLife();

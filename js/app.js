@@ -52,9 +52,9 @@ const btnReset = document.getElementById('btn__reset');
     //create an event listener for the keyboard keys
    const keyboard = document.getElementById('qwerty');
     keyboard.addEventListener('click', (e) => {
-        //if the event target is a letter button
+        
         if (e.target.tagName === 'BUTTON') {
-            //call the handleInteraction method
+            
             game.handleInteraction(e.target);
         }
     });

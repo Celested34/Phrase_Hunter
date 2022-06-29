@@ -50,7 +50,7 @@ class Phrase {
         phraseSplit.forEach((character) => {
             //if the letter is in the phrase
             if (character === letter) {
-                //remove the class name of 'hide letter'
+                
                 let li = document.querySelector(`.${character}`);
                 li.classList.remove('hide');
                 li.classList.add('show');
