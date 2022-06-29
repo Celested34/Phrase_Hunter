@@ -47,5 +47,14 @@ const btnReset = document.getElementById('btn__reset');
     });
 
 
-//test step 9    
+//step 10 code - allows the player to press a key on the keyboard
 
+    //create an event listener for the keyboard keys
+   const keyboard = document.getElementById('qwerty');
+    keyboard.addEventListener('click', (e) => {
+        //if the event target is a letter button
+        if (e.target.tagName === 'BUTTON') {
+            //call the handleInteraction method
+            game.handleInteraction(e.target);
+        }
+    });

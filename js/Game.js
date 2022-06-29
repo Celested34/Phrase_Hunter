@@ -62,7 +62,7 @@ class Game {
             //get the image elements from the scoreboard
             let lives = document.querySelectorAll('img');
             //if the player has more than 0 lives
-            if (this.missed < 5) {
+            if (this.missed < 4) {
                 //remove a life from the scoreboard
                 lives[this.missed].src = 'images/lostHeart.png';
                 //increment the missed property
@@ -83,14 +83,75 @@ class Game {
 
             if (gameWon === true) {
                 gameOver.textContent = 'Winner!';
-                overlay.className = 'winner';
+                overlay.className = 'win';
                 overlay.style.display = '';               
             } else if (gameWon === false) {   
                 gameOver.textContent = 'Game Over';
-                overlay.className = 'over';
+                overlay.className = 'lose';
                 overlay.style.display = '';
             }
 
+            this.resetGame();
 
         }
+
+
+        handleInteraction(button) {
+            // console.log(button);
+            
+            //disable the button
+            button.disabled = true;
+
+            //check if the button text matches the active phrase letter
+            if (this.activePhrase.checkLetter(button.innerHTML)) {
+               
+                //call the method to show matched letter
+                this.activePhrase.showMatchedLetter(button.innerHTML);
+                //add the class 'chosen' 
+                button.classList.add('chosen');
+
+                //call the checkForWin method
+                    if(this.checkForWin() === true) {
+                        this.gameOver(true);
+                    };
+            } else {            
+                //add the class 'wrong' 
+                button.classList.add('wrong');
+                //call removeLife 
+                this.removeLife();
+            }       
+
+
+        };   
+
+        //resets the game
+        resetGame() {
+
+            //remove li elements from the phrase
+            let removeLi = document.querySelector('#phrase ul');
+            removeLi.innerHTML = '';
+            
+            //enable onscreen keyboard button
+            let keyboard = document.querySelectorAll('.key');
+            keyboard.forEach(button => {
+                button.disabled = false;
+                button.classList.add('key');
+                button.classList.remove('chosen')
+                button.classList.remove('wrong') 
+            })
+
+            //reset hearts with a for each loop
+            let resetHearts = document.querySelectorAll('img');
+            resetHearts.forEach(pic => {
+                pic.src = 'images/liveHeart.png';
+            })
+        
+
+        
+        };
+            
+
+
+
+
 }
